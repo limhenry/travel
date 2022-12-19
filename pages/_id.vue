@@ -7,7 +7,7 @@
           All Countries
         </NuxtLink>
         <span>></span>
-        <span>{{ country.name }} ({{ country.value }} / {{ country.max }})</span>
+        <span>{{ country.name }} ({{ value }} / {{ country.max }})</span>
       </div>
       <div class="lists grid gap-6">
         <StateCard
@@ -29,6 +29,9 @@ import data from '~/data/data.json'
 export default {
   name: 'CountryPage',
   computed: {
+    value() {
+      return this.country.states.length
+    },
     countryId () {
       return this.$route.params.id
     },
@@ -36,7 +39,7 @@ export default {
       return data.find(e => e.id === this.countryId)
     },
     states () {
-      return [...this.country.states, ...new Array(this.country.max - this.country.value).fill('')]
+      return [...this.country.states, ...new Array(this.country.max - this.value).fill('')]
     }
   }
 }

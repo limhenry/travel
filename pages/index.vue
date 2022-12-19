@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="grid gap-4 max-w-screen-xl mx-auto p-4">
-      <div class="grid gap-2 grid-flow-col justify-end">
+      <div class="grid gap-2 grid-flow-col justify-end items-center">
         <input id="transit" v-model="transit" class="cursor-pointer" type="checkbox">
         <label class="cursor-pointer" for="transit">Show transit/layover countries</label>
       </div>
@@ -12,7 +12,7 @@
           :id="country.id"
           :key="key"
           :name="country.name"
-          :value="country.value"
+          :value="country.states ? country.states.length : -1"
           :max="country.max"
         />
       </div>
