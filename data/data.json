@@ -2,7 +2,6 @@
   {
     "id": "my",
     "name": "Malaysia",
-    "value": 15,
     "max": 16,
     "states": [
       "johor",
@@ -25,7 +24,6 @@
   {
     "id": "sg",
     "name": "Singapore",
-    "value": 4,
     "max": 5,
     "states": ["south_west", "central_singapore", "south_east", "north_west"],
     "useCountryFlag": true
@@ -33,7 +31,6 @@
   {
     "id": "cn",
     "name": "China",
-    "value": 9,
     "max": 31,
     "states": [
       "beijing",
@@ -51,7 +48,6 @@
   {
     "id": "th",
     "name": "Thailand",
-    "value": 8,
     "max": 77,
     "states": [
       "chiang_mai.png",
@@ -67,7 +63,6 @@
   {
     "id": "kh",
     "name": "Cambodia",
-    "value": 2,
     "max": 25,
     "states": ["siem_reap", "phnom_penh"],
     "useCountryFlag": true
@@ -75,7 +70,6 @@
   {
     "id": "vn",
     "name": "Vietnam",
-    "value": 2,
     "max": 63,
     "states": ["da_nang", "ho_chi_minh_city"],
     "useCountryFlag": true
@@ -83,7 +77,6 @@
   {
     "id": "in",
     "name": "India",
-    "value": 3,
     "max": 36,
     "states": ["delhi", "rajasthan", "uttar_pradesh"],
     "useCountryFlag": true
@@ -91,14 +84,12 @@
   {
     "id": "id",
     "name": "Indonesia",
-    "value": 2,
     "max": 37,
     "states": ["bali", "special_region_of_yogyakarta"]
   },
   {
     "id": "jp",
     "name": "Japan",
-    "value": 1,
     "max": 47,
     "states": ["chiba"],
     "transit": true
@@ -106,14 +97,12 @@
   {
     "id": "us",
     "name": "United States",
-    "value": 4,
     "max": 51,
     "states": ["california", "nevada", "arizona", "utah"]
   },
   {
     "id": "ph",
     "name": "Philippines",
-    "value": 2,
     "max": 17,
     "states": ["national_capital_region", "central_visayas"],
     "useCountryFlag": true
@@ -121,7 +110,6 @@
   {
     "id": "hk",
     "name": "Hong Kong",
-    "value": 1,
     "max": 18,
     "states": ["islands"],
     "transit": true,
@@ -130,14 +118,12 @@
   {
     "id": "tw",
     "name": "Taiwan",
-    "value": 3,
     "max": 20,
     "states": ["taoyuan_city", "taipei_city"]
   },
   {
     "id": "de",
     "name": "Germany",
-    "value": 5,
     "max": 16,
     "states": [
       "brandenburg",
@@ -150,8 +136,13 @@
   {
     "id": "pl",
     "name": "Poland",
-    "value": 1,
     "max": 16,
-    "states": ["lubusz"]
+    "states": ["lubusz", "masovian"]
+  },
+  {
+    "id": "at",
+    "name": "Austria",
+    "max": 9,
+    "states": ["salzburg", "upper_austria"]
   }
 ]
