@@ -1,5 +1,5 @@
 <template>
-  <footer class="max-w-screen-xl mx-auto px-4 py-8 text-xs text-gray-500 dark:text-gray-400">
+  <footer class="max-w-screen-xl mx-auto px-4 py-4 text-xs text-gray-500 dark:text-gray-400">
     <ol class="border-t border-gray-400 dark:border-gray-500 grid gap-2 py-4">
       <li>
         1. Progress are based on first-level administrative divisions. See
@@ -34,6 +34,17 @@
           rel="noopener noreferrer"
         >
           Twitter
+        </a>
+        <span>
+          &middot;
+        </span>
+        <a
+          class="text-gray-800 dark:text-gray-300 hover:underline"
+          href="https://mastodon.social/@henrylim96"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mastodon
         </a>
       </div>
     </div>

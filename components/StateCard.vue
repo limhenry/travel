@@ -5,12 +5,13 @@
         v-if="stateId"
         :src="flagUrl"
         class="w-full object-contain rounded border-2 border-black dark:saturate-[90%]"
+        :class="{ 'saturate-[.1] dark:saturate-0 opacity-30': unvisited }"
         :alt="flagAlt"
         loading="lazy"
       >
       <div v-else class="w-full h-full bg-gray-300 dark:bg-gray-400 rounded" />
     </div>
-    <div v-if="stateId" class="capitalize leading-4">
+    <div v-if="stateId" class="capitalize leading-4" :class="{ 'opacity-30': unvisited }">
       {{ stateName }}
     </div>
     <div v-else class="text-gray-700 dark:text-gray-400">
@@ -32,6 +33,10 @@ export default {
       default: ''
     },
     useCountryFlag: {
+      type: Boolean,
+      default: false
+    },
+    unvisited: {
       type: Boolean,
       default: false
     }

@@ -3,7 +3,7 @@
     "id": "my",
     "name": "Malaysia",
     "max": 16,
-    "states": [
+    "visited": [
       "johor",
       "kedah",
       "kelantan",
@@ -19,20 +19,24 @@
       "terengganu",
       "kuala_lumpur",
       "putrajaya"
+    ],
+    "unvisited": [
+      "labuan"
     ]
   },
   {
     "id": "sg",
     "name": "Singapore",
     "max": 5,
-    "states": ["south_west", "central_singapore", "south_east", "north_west"],
+    "visited": ["south_west", "central_singapore", "south_east", "north_west"],
+    "unvisited": ["north_east"],
     "useCountryFlag": true
   },
   {
     "id": "cn",
     "name": "China",
     "max": 31,
-    "states": [
+    "visited": [
       "beijing",
       "tianjin",
       "hebei",
@@ -43,13 +47,37 @@
       "guangdong",
       "fujian"
     ],
+    "unvisited": [
+      "anhui",
+      "chongqing",
+      "gansu",
+      "guangxi",
+      "guizhou",
+      "henan",
+      "hubei",
+      "hainan",
+      "heilongjiang",
+      "hunan",
+      "jilin",
+      "jiangxi",
+      "liaoning",
+      "inner_mongolia",
+      "ningxia",
+      "qinghai",
+      "shandong",
+      "shaanxi",
+      "shanxi",
+      "xinjiang",
+      "tibet",
+      "yunnan"
+    ],
     "useCountryFlag": true
   },
   {
     "id": "th",
     "name": "Thailand",
     "max": 77,
-    "states": [
+    "visited": [
       "chiang_mai.png",
       "chiang_rai.png",
       "bangkok.png",
@@ -64,54 +92,96 @@
     "id": "kh",
     "name": "Cambodia",
     "max": 25,
-    "states": ["siem_reap", "phnom_penh"],
+    "visited": ["siem_reap", "phnom_penh"],
+    "unvisited": [
+      "banteay_meanchey",
+      "battambang",
+      "kampong_cham",
+      "kampong_chhnang",
+      "kampong_speu",
+      "kampong_thom",
+      "kampot",
+      "kandal",
+      "koh_kong",
+      "kratié",
+      "mondulkiri",
+      "preah_vihear",
+      "prey_veng",
+      "pursat",
+      "ratanakiri",
+      "preah_sihanouk",
+      "stung_treng",
+      "svay_rieng",
+      "takéo",
+      "oddar_meanchey",
+      "kep",
+      "pailin",
+      "tboung_khmum"
+    ],
     "useCountryFlag": true
   },
   {
     "id": "vn",
     "name": "Vietnam",
     "max": 63,
-    "states": ["da_nang", "ho_chi_minh_city"],
+    "visited": ["da_nang", "ho_chi_minh_city"],
     "useCountryFlag": true
   },
   {
     "id": "in",
     "name": "India",
     "max": 36,
-    "states": ["delhi", "rajasthan", "uttar_pradesh"],
+    "visited": ["delhi", "rajasthan", "uttar_pradesh"],
     "useCountryFlag": true
   },
   {
     "id": "id",
     "name": "Indonesia",
     "max": 37,
-    "states": ["bali", "special_region_of_yogyakarta"]
+    "visited": ["bali", "special_region_of_yogyakarta"]
   },
   {
     "id": "jp",
     "name": "Japan",
     "max": 47,
-    "states": ["chiba"],
+    "visited": ["chiba"],
     "transit": true
   },
   {
     "id": "us",
     "name": "United States",
     "max": 51,
-    "states": ["california", "nevada", "arizona", "utah"]
+    "visited": ["california", "nevada", "arizona", "utah"]
   },
   {
     "id": "ph",
     "name": "Philippines",
     "max": 17,
-    "states": ["national_capital_region", "central_visayas"],
+    "visited": ["national_capital_region", "central_visayas"],
+    "unvisited": [
+      "cordillera_administrative_region",
+      "ilocos_region",
+      "cagayan_valley",
+      "central_luzon",
+      "calabarzon",
+      "southwestern_tagalog_region",
+      "bicol_region",
+      "western_visayas",
+      "eastern_visayas",
+      "zamboanga_peninsula",
+      "northern_mindanao",
+      "davao_region",
+      "soccsksargen",
+      "caraga",
+      "bangsamoro"
+    ],
     "useCountryFlag": true
   },
   {
     "id": "hk",
     "name": "Hong Kong",
     "max": 18,
-    "states": ["islands"],
+    "visited": ["islands"],
     "transit": true,
     "useCountryFlag": true
   },
@@ -119,30 +189,52 @@
     "id": "tw",
     "name": "Taiwan",
     "max": 20,
-    "states": ["taoyuan_city", "taipei_city"]
+    "visited": ["taoyuan_city", "taipei_city"]
   },
   {
     "id": "de",
     "name": "Germany",
     "max": 16,
-    "states": [
+    "visited": [
       "brandenburg",
       "berlin",
       "bavaria",
       "saxony_anhalt",
       "mecklenburg_vorpommern"
+    ],
+    "unvisited": [
+      "baden_württemberg",
+      "bremen",
+      "hamburg",
+      "hesse",
+      "lower_saxony",
+      "north_rhine_westphalia",
+      "rhineland_palatinate",
+      "saarland",
+      "saxony",
+      "schleswig_holstein",
+      "thuringia"
     ]
   },
   {
     "id": "pl",
     "name": "Poland",
     "max": 16,
-    "states": ["lubusz", "masovian"]
+    "visited": ["lubusz", "masovian"]
   },
   {
     "id": "at",
     "name": "Austria",
     "max": 9,
-    "states": ["salzburg", "upper_austria"]
+    "visited": ["salzburg", "upper_austria"],
+    "unvisited": [
+      "burgenland",
+      "carinthia",
+      "lower_austria",
+      "styria",
+      "tyrol",
+      "vienna",
+      "vorarlberg"
+    ]
   }
 ]

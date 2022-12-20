@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="grid gap-4 max-w-screen-xl mx-auto p-4">
+    <div class="grid gap-4 max-w-screen-xl mx-auto w-full p-4">
       <div class="grid grid-flow-col justify-start gap-2 font-semibold">
         <NuxtLink to="/" class="hover:underline">
           All Countries
@@ -11,11 +11,19 @@
       </div>
       <div class="lists grid gap-6">
         <StateCard
-          v-for="(stateId, key) in states"
+          v-for="(stateId, key) in visited"
           :key="key"
           :country-id="countryId"
           :state-id="stateId"
           :use-country-flag="country.useCountryFlag"
+        />
+        <StateCard
+          v-for="(stateId, key) in country.unvisited"
+          :key="key"
+          :country-id="countryId"
+          :state-id="stateId"
+          :use-country-flag="country.useCountryFlag"
+          unvisited
         />
       </div>
     </div>
@@ -30,7 +38,7 @@ export default {
   name: 'CountryPage',
   computed: {
     value() {
-      return this.country.states.length
+      return this.country.visited.length
     },
     countryId () {
       return this.$route.params.id
@@ -38,8 +46,9 @@ export default {
     country () {
       return data.find(e => e.id === this.countryId)
     },
-    states () {
-      return [...this.country.states, ...new Array(this.country.max - this.value).fill('')]
+    visited() {
+      if (this.country.unvisited) return this.country.visited
+      return [...this.country.visited, ...new Array(this.country.max - this.value).fill('')]
     }
   }
 }
