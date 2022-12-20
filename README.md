@@ -1,4 +1,7 @@
-# travel
+# Henry's Travel Achievements - [travel.limhenry.xyz](https://travel.limhenry.xyz)
+> List of countries I've visited. Built using Nuxt.js and TailwindCSS.
+
+![Screenshot of travel.limhenry.xyz](https://i.imgur.com/g9JNY2r.png)
 
 ## Build Setup
 
