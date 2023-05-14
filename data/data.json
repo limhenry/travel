@@ -220,7 +220,7 @@
     "id": "pl",
     "name": "Poland",
     "max": 16,
-    "visited": ["lubusz", "masovian"]
+    "visited": ["lubusz", "masovian", "pomerania"]
   },
   {
     "id": "at",
