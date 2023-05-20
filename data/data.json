@@ -201,7 +201,8 @@
       "bavaria",
       "saxony_anhalt",
       "mecklenburg_vorpommern",
-      "hamburg"
+      "hamburg",
+      "saxony"
     ],
     "unvisited": [
       "baden_württemberg",
@@ -211,7 +212,6 @@
       "north_rhine_westphalia",
       "rhineland_palatinate",
       "saarland",
-      "saxony",
       "schleswig_holstein",
       "thuringia"
     ]
