@@ -202,14 +202,14 @@
       "saxony_anhalt",
       "mecklenburg_vorpommern",
       "hamburg",
-      "saxony"
+      "saxony",
+      "north_rhine_westphalia"
     ],
     "unvisited": [
       "baden_württemberg",
       "bremen",
       "hesse",
       "lower_saxony",
-      "north_rhine_westphalia",
       "rhineland_palatinate",
       "saarland",
       "schleswig_holstein",
@@ -236,5 +236,11 @@
       "vienna",
       "vorarlberg"
     ]
+  },
+  {
+    "id": "nl",
+    "name": "Netherlands",
+    "max": 12,
+    "visited": ["north_holland"]
   }
 ]
