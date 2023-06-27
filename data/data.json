@@ -241,6 +241,6 @@
     "id": "nl",
     "name": "Netherlands",
     "max": 12,
-    "visited": ["north_holland"]
+    "visited": ["north_holland", "utrecht", "south_holland"]
   }
 ]
