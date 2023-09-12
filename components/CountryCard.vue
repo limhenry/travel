@@ -5,11 +5,11 @@
       :to="id"
       class="card hover:bg-gray-100 dark:hover:bg-gray-800"
     >
-      <div class="grid items-center" style="aspect-ratio: 3/2">
+      <div class="flex items-center" style="aspect-ratio: 3/2">
         <img
           v-if="id"
           :src="require(`~/assets/countries/${id}.svg`)"
-          class="w-full object-contain rounded border-2 border-black dark:saturate-[90%]"
+          class="max-h-full m-auto rounded border-2 border-black dark:saturate-[90%]"
           :alt="flagAlt"
           loading="lazy"
         >
@@ -75,7 +75,4 @@ export default {
   .card {
     @apply h-full grid gap-3 items-start border-2 border-gray-600 dark:border-gray-500 px-4 py-3 rounded-md;
   }
-  /* progress::-webkit-progress-bar {
-    background-color: red;
-  } */
 </style>

@@ -12,14 +12,14 @@
       <div class="lists grid gap-6">
         <StateCard
           v-for="(stateId, key) in visited"
-          :key="key"
+          :key="`visited-${key}`"
           :country-id="countryId"
           :state-id="stateId"
           :use-country-flag="country.useCountryFlag"
         />
         <StateCard
           v-for="(stateId, key) in country.unvisited"
-          :key="key"
+          :key="`unvisited-${key}`"
           :country-id="countryId"
           :state-id="stateId"
           :use-country-flag="country.useCountryFlag"
@@ -37,7 +37,7 @@ import data from '~/data/data.json'
 export default {
   name: 'CountryPage',
   computed: {
-    value() {
+    value () {
       return this.country.visited.length
     },
     countryId () {
@@ -46,8 +46,8 @@ export default {
     country () {
       return data.find(e => e.id === this.countryId)
     },
-    visited() {
-      if (this.country.unvisited) return this.country.visited
+    visited () {
+      if (this.country.unvisited) { return this.country.visited }
       return [...this.country.visited, ...new Array(this.country.max - this.value).fill('')]
     }
   }
@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
   .lists {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 
   .lists > div {
