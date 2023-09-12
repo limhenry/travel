@@ -226,13 +226,12 @@
     "id": "at",
     "name": "Austria",
     "max": 9,
-    "visited": ["salzburg", "upper_austria"],
+    "visited": ["salzburg", "upper_austria", "tyrol"],
     "unvisited": [
       "burgenland",
       "carinthia",
       "lower_austria",
       "styria",
-      "tyrol",
       "vienna",
       "vorarlberg"
     ]
@@ -242,5 +241,18 @@
     "name": "Netherlands",
     "max": 12,
     "visited": ["north_holland", "utrecht", "south_holland"]
+  },
+  {
+    "id": "ch",
+    "name": "Switzerland",
+    "max": 26,
+    "visited": ["basel-stadt"]
+  },
+  {
+    "id": "fr",
+    "name": "France",
+    "max": 18,
+    "visited": ["grand_est"],
+    "useCountryFlag": true
   }
 ]
