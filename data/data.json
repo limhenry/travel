@@ -254,5 +254,33 @@
     "max": 18,
     "visited": ["grand_est"],
     "useCountryFlag": true
+  },
+  {
+    "id": "gb-eng",
+    "name": "England",
+    "max": 9,
+    "visited": ["london"],
+    "useCountryFlag": true,
+    "transit": true
+  },
+  {
+    "id": "hr",
+    "name": "Croatia",
+    "max": 21,
+    "visited": ["zagreb_county", "zagreb"]
+  },
+  {
+    "id": "si",
+    "name": "Slovenia",
+    "max": 212,
+    "visited": ["Urban Municipality of Ljubljana"],
+    "useCountryFlag": true
+  },
+  {
+    "id": "ie",
+    "name": "Ireland",
+    "max": 26,
+    "visited": [],
+    "useCountryFlag": true
   }
 ]

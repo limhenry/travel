@@ -3,18 +3,10 @@
     <NuxtLink
       v-if="id"
       :to="id"
-      class="card hover:bg-gray-100 dark:hover:bg-gray-800"
+      class="card relative hover:bg-gray-100 dark:hover:bg-gray-800"
     >
-      <div class="flex items-center" style="aspect-ratio: 3/2">
-        <img
-          v-if="id"
-          :src="require(`~/assets/countries/${id}.svg`)"
-          class="max-h-full m-auto rounded border-2 border-black dark:saturate-[90%]"
-          :alt="flagAlt"
-          loading="lazy"
-        >
-        <div v-else class="w-full h-full bg-gray-300 dark:bg-gray-400 rounded" />
-      </div>
+      <TransitMarker v-if="transit" />
+      <img :id="`flag-${id}`" class="block w-full self-center rounded border-2 border-black" :src="require(`~/assets/countries/${id}.svg`)">
 
       <div v-if="id" class="grid gap-2 leading-4 items-end" style="grid-template-columns: 1fr auto">
         <div class="flex-1 font-medium">
@@ -32,7 +24,7 @@
       v-else
       class="card"
     >
-      <div class="grid items-center" style="aspect-ratio: 3/2">
+      <div class="grid self-center" style="aspect-ratio: 3/2">
         <div class="w-full h-full bg-gray-300 dark:bg-gray-400 rounded" />
       </div>
       <div class="text-gray-700 dark:text-gray-400 text-center">
@@ -61,6 +53,10 @@ export default {
     max: {
       type: Number,
       default: 0
+    },
+    transit: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -72,7 +68,13 @@ export default {
 </script>
 
 <style scoped>
-  .card {
-    @apply h-full grid gap-3 items-start border-2 border-gray-600 dark:border-gray-500 px-4 py-3 rounded-md;
-  }
+.card {
+  @apply h-full grid gap-3 border-2 border-gray-600 dark:border-gray-500 px-4 py-3 rounded-md;
+  grid-template-rows: 1fr auto;
+}
+
+.card img#flag-ch {
+  max-width: 70%;
+  margin: auto;
+}
 </style>

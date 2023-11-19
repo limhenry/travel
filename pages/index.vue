@@ -22,6 +22,7 @@
           :name="country.name"
           :value="country.visited ? country.visited.length : -1"
           :max="country.max"
+          :transit="country.transit"
         />
       </div>
     </div>
@@ -35,11 +36,11 @@ import data from '~/data/data.json'
 export default {
   name: 'IndexPage',
   data: () => ({
-    transit: false
+    transit: true
   }),
   computed: {
     countries () {
-      return [...data, {}].filter(e => e.transit !== !this.transit)
+      return [...data.filter(e => e.transit !== !this.transit).filter(e => e.visited && e.visited.length > 0), {}]
     }
   }
 }
