@@ -85,7 +85,8 @@
       "nonthaburi.png",
       "samut_prakan.png",
       "chonburi.png",
-      "rayong.png"
+      "rayong.png",
+      "yala.png"
     ]
   },
   {
@@ -206,11 +207,11 @@
       "north_rhine_westphalia",
       "schleswig_holstein",
       "bremen",
-      "baden_württemberg"
+      "baden_württemberg",
+      "lower_saxony"
     ],
     "unvisited": [
       "hesse",
-      "lower_saxony",
       "rhineland_palatinate",
       "saarland",
       "thuringia"
@@ -280,7 +281,14 @@
     "id": "ie",
     "name": "Ireland",
     "max": 26,
-    "visited": [],
-    "useCountryFlag": true
+    "visited": ["dublin"]
+  },
+  {
+    "id": "tr",
+    "name": "Turkey",
+    "max": 81,
+    "visited": ["istanbul"],
+    "useCountryFlag": true,
+    "transit": true
   }
 ]
