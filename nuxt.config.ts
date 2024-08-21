@@ -1,0 +1,91 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  app: {
+    head: {
+      title: 'Henry\'s Travel Achievements',
+      htmlAttrs: {
+        lang: 'en'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ],
+      bodyAttrs: {
+        class: 'transition dark:bg-gray-900 dark:text-gray-50'
+      },
+      script: [
+        {
+          hid: 'theme',
+          innerHTML: `
+            console.log('test');
+            if (typeof theme === 'undefined') {
+              // const theme = document.querySelector('meta[name=theme-color]')
+              if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+                // theme.setAttribute('content', '#111827')
+              } else {
+                document.documentElement.classList.remove('dark')
+                // theme.setAttribute('content', '#fff')
+              }
+            }
+          `,
+          type: 'text/javascript',
+          // charset: 'utf-8'
+        }
+      ],
+      // __dangerouslyDisableSanitizers: ['script'],
+    }
+  }
+  // head: {
+  //   __dangerouslyDisableSanitizers: ['script'],
+  //   title: 'Henry\'s Travel Achievements',
+  //   htmlAttrs: {
+  //     lang: 'en'
+  //   },
+  //   meta: [
+  //     { charset: 'utf-8' },
+  //     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+  //     { hid: 'description', name: 'description', content: '' },
+  //     { name: 'format-detection', content: 'telephone=no' }
+  //   ],
+  //   link: [
+  //     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+  //   ],
+  //   bodyAttrs: {
+  //     class: 'transition dark:bg-gray-900 dark:text-gray-50'
+  //   },
+  //   script: [
+  //     {
+  //       hid: 'theme',
+  //       innerHTML: `
+  //         if (typeof theme === 'undefined') {
+  //           // const theme = document.querySelector('meta[name=theme-color]')
+  //           if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  //             document.documentElement.classList.add('dark')
+  //             // theme.setAttribute('content', '#111827')
+  //           } else {
+  //             document.documentElement.classList.remove('dark')
+  //             // theme.setAttribute('content', '#fff')
+  //           }
+  //         }
+  //       `,
+  //       type: 'text/javascript',
+  //       charset: 'utf-8'
+  //     }
+  //   ]
+  // },
+})

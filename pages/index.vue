@@ -6,7 +6,7 @@
         <div class="grid grid-flow-col justify-start gap-2 font-semibold">
           <div>
             <span>All Countries </span>
-            <span>({{  countries.length - 1 }})</span>
+            <span>({{ countries.length - 1 }})</span>
           </div>
         </div>
         <div class="grid gap-2 grid-flow-col justify-end items-center">

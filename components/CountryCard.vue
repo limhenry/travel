@@ -6,7 +6,7 @@
       class="card relative hover:bg-gray-100 dark:hover:bg-gray-800"
     >
       <TransitMarker v-if="transit" />
-      <img :id="`flag-${id}`" class="block w-full self-center rounded border-2 border-black" :src="require(`~/assets/countries/${id}.svg`)">
+      <img :id="`flag-${id}`" class="block w-full self-center rounded border-2 border-black" :src="`_nuxt/assets/countries/${id}.svg`">
 
       <div v-if="id" class="grid gap-2 leading-4 items-end" style="grid-template-columns: 1fr auto">
         <div class="flex-1 font-medium">

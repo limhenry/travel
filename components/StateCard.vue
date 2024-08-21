@@ -55,9 +55,9 @@ export default {
       return `Flag of ${this.stateName}`
     },
     flagUrl () {
-      if (this.useCountryFlag) { return require(`~/assets/countries/${this.countryId}.svg`) }
-      if (this.isPng) { return require(`~/assets/${this.countryId}/${this.stateId}`) }
-      return require(`~/assets/${this.countryId}/${this.stateId}.svg`)
+      if (this.useCountryFlag) { return `_nuxt/assets/countries/${this.countryId}.svg` }
+      if (this.isPng) { return `_nuxt/assets/${this.countryId}/${this.stateId}` }
+      return `_nuxt/assets/${this.countryId}/${this.stateId}.svg`
     }
   }
 }
