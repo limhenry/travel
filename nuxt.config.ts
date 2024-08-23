@@ -30,7 +30,6 @@ export default defineNuxtConfig({
         {
           hid: 'theme',
           innerHTML: `
-            console.log('test');
             if (typeof theme === 'undefined') {
               if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark')
@@ -40,6 +39,20 @@ export default defineNuxtConfig({
             }
           `,
           type: 'text/javascript',
+        },
+        {
+          hid: 'speculationrules',
+          innerHTML: `
+            {
+              "prerender": [{
+                "where": {
+                  "href_matches": "/*"
+                },
+                "eagerness": "moderate"
+              }]
+            }
+          `,
+          type: 'speculationrules',
         }
       ],
     }
