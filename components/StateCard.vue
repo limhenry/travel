@@ -55,9 +55,9 @@ export default {
       return `Flag of ${this.stateName}`
     },
     flagUrl () {
-      if (this.useCountryFlag) { return require(`~/assets/countries/${this.countryId}.svg`) }
-      if (this.isPng) { return require(`~/assets/${this.countryId}/${this.stateId}`) }
-      return require(`~/assets/${this.countryId}/${this.stateId}.svg`)
+      if (this.useCountryFlag) { return `/images/countries/${this.countryId}.svg` }
+      if (this.isPng) { return `/images/${this.countryId}/${this.stateId}` }
+      return `/images/${this.countryId}/${this.stateId}.svg`
     }
   }
 }
