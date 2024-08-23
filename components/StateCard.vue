@@ -22,45 +22,29 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'CountryCard',
-  props: {
-    countryId: {
-      type: String,
-      default: ''
-    },
-    stateId: {
-      type: String,
-      default: ''
-    },
-    useCountryFlag: {
-      type: Boolean,
-      default: false
-    },
-    unvisited: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    isPng () {
-      return this.stateId.includes('.png')
-    },
-    stateName () {
-      if (this.isPng) { return this.stateId.replace('.png', '').replace(/_/g, ' ') }
-      return this.stateId.replace(/_/g, ' ')
-    },
-    flagAlt () {
-      return `Flag of ${this.stateName}`
-    },
-    flagUrl () {
-      if (this.useCountryFlag) { return `/images/countries/${this.countryId}.svg` }
-      if (this.isPng) { return `/images/${this.countryId}/${this.stateId}` }
-      return `/images/${this.countryId}/${this.stateId}.svg`
-    }
-  }
+<script setup lang="ts">
+type Props = {
+  countryId?: string;
+  stateId?: string;
+  useCountryFlag?: boolean;
+  unvisited?: boolean;
 }
+const props = withDefaults(defineProps<Props>(), {
+  countryId: '',
+  stateId: ''
+})
+
+const isPng = computed(() => props.stateId.includes('.png'))
+const stateName = computed(() => {
+  if (isPng.value) { return props.stateId.replace('.png', '').replace(/_/g, ' ') }
+  return props.stateId.replace(/_/g, ' ')
+})
+const flagAlt = computed(() => `Flag of ${stateName.value}`)
+const flagUrl = computed(() => {
+  if (props.useCountryFlag) { return `/images/countries/${props.countryId}.svg` }
+  if (isPng.value) { return `/images/${props.countryId}/${props.stateId}` }
+  return `/images/${props.countryId}/${props.stateId}.svg`
+})
 </script>
 
 <style scoped>

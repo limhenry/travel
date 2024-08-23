@@ -30,20 +30,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import data from '~/data/data.json'
 
-export default {
-  name: 'IndexPage',
-  data: () => ({
-    transit: true
-  }),
-  computed: {
-    countries () {
-      return [...data.filter(e => e.transit !== !this.transit).filter(e => e.visited && e.visited.length > 0), {}]
-    }
-  }
-}
+const transit = ref(true)
+const countries = computed(() => [...data.filter(e => e.transit !== !transit.value).filter(e => e.visited && e.visited.length > 0), {}])
 </script>
 
 <style scoped>

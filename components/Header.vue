@@ -26,19 +26,14 @@
   </header>
 </template>
 
-<script>
-export default {
-  name: 'Header',
-  methods: {
-    toggleTheme () {
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.theme = 'light'
-        document.documentElement.classList.remove('dark')
-      } else {
-        localStorage.theme = 'dark'
-        document.documentElement.classList.add('dark')
-      }
-    }
+<script setup lang="ts">
+const toggleTheme = () => {
+  if (document.documentElement.classList.contains('dark')) {
+    localStorage.theme = 'light'
+    document.documentElement.classList.remove('dark')
+  } else {
+    localStorage.theme = 'dark'
+    document.documentElement.classList.add('dark')
   }
 }
 </script>
