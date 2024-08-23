@@ -13,5 +13,10 @@ export default {
     extend: {},
   },
   plugins: [],
+  safelist: [
+    'transition',
+    'dark:bg-gray-900',
+    'dark:text-gray-50'
+  ],
 }
 

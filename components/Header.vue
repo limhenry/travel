@@ -31,15 +31,12 @@ export default {
   name: 'Header',
   methods: {
     toggleTheme () {
-      // const theme = document.querySelector('meta[name=theme-color]')
       if (document.documentElement.classList.contains('dark')) {
         localStorage.theme = 'light'
         document.documentElement.classList.remove('dark')
-        // theme.setAttribute('content', '#fff')
       } else {
         localStorage.theme = 'dark'
         document.documentElement.classList.add('dark')
-        // theme.setAttribute('content', '#111827')
       }
     }
   }
