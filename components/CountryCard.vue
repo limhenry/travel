@@ -34,37 +34,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'CountryCard',
-  props: {
-    id: {
-      type: String,
-      default: null
-    },
-    name: {
-      type: String,
-      default: ''
-    },
-    value: {
-      type: Number,
-      default: 0
-    },
-    max: {
-      type: Number,
-      default: 0
-    },
-    transit: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    flagAlt () {
-      return `Flag of ${this.name}`
-    }
-  }
+<script setup lang="ts">
+type Props = {
+  id?: string;
+  name?: string;
+  value: number;
+  max?: number;
+  transit?: boolean;
 }
+const props = withDefaults(defineProps<Props>(), {
+  max: 0
+})
+
+const flagAlt = computed(() => `Flag of ${props.name}`)
 </script>
 
 <style scoped>

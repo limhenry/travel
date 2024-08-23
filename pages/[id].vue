@@ -1,13 +1,13 @@
 <template>
   <div>
     <Header />
-    <div class="grid gap-4 max-w-screen-xl mx-auto w-full p-4">
+    <div v-if="country" class="grid gap-4 max-w-screen-xl mx-auto w-full p-4">
       <div class="grid grid-flow-col justify-start gap-2 font-semibold">
         <NuxtLink to="/" class="hover:underline">
           All Countries
         </NuxtLink>
         <span>></span>
-        <span>{{ country.name }} ({{ value }} / {{ country.max }})</span>
+        <span>{{ country.name }} ({{ visitedLength }} / {{ country.max }})</span>
       </div>
       <div class="lists grid gap-6">
         <StateCard
@@ -31,27 +31,19 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import data from '~/data/data.json'
 
-export default {
-  name: 'CountryPage',
-  computed: {
-    value () {
-      return this.country.visited.length
-    },
-    countryId () {
-      return this.$route.params.id
-    },
-    country () {
-      return data.find(e => e.id === this.countryId)
-    },
-    visited () {
-      if (this.country.unvisited) { return this.country.visited }
-      return [...this.country.visited, ...new Array(this.country.max - this.value).fill('')]
-    }
-  }
-}
+const route = useRoute()
+
+const countryId = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
+const visitedLength = computed(() => country.value?.visited.length || 0)
+const country = computed(() => data.find(e => e.id === countryId))
+const visited = computed(() => {
+  if (!country.value) return [];
+  if (country.value?.unvisited) { return country.value.visited }
+  return [...country.value?.visited, ...new Array(country.value?.max - visitedLength.value).fill('')]
+})
 </script>
 
 <style scoped>
