@@ -290,5 +290,12 @@
     "visited": ["istanbul"],
     "useCountryFlag": true,
     "transit": true
+  },
+  {
+    "id": "dk",
+    "name": "Denmark",
+    "max": 5,
+    "visited": ["region_syddanmark"],
+    "unvisited": ["region_hovedstaden", "region_midtjylland", "region_nordjylland", "region_sjælland"]
   }
 ]

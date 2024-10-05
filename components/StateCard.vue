@@ -34,6 +34,8 @@ const props = withDefaults(defineProps<Props>(), {
   stateId: ''
 })
 
+const normalizeFlagUrl = (url: string) => url.replace(/ü/g, 'ue').replace(/æ/g, 'ae')
+
 const isPng = computed(() => props.stateId.includes('.png'))
 const stateName = computed(() => {
   if (isPng.value) { return props.stateId.replace('.png', '').replace(/_/g, ' ') }
@@ -42,8 +44,8 @@ const stateName = computed(() => {
 const flagAlt = computed(() => `Flag of ${stateName.value}`)
 const flagUrl = computed(() => {
   if (props.useCountryFlag) { return `/images/countries/${props.countryId}.svg` }
-  if (isPng.value) { return `/images/${props.countryId}/${props.stateId}` }
-  return `/images/${props.countryId}/${props.stateId}.svg`
+  if (isPng.value) { return `/images/${props.countryId}/${normalizeFlagUrl(props.stateId)}` }
+  return `/images/${props.countryId}/${normalizeFlagUrl(props.stateId)}.svg`
 })
 </script>
 
