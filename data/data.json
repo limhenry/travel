@@ -297,5 +297,30 @@
     "max": 5,
     "visited": ["region_syddanmark"],
     "unvisited": ["region_hovedstaden", "region_midtjylland", "region_nordjylland", "region_sjælland"]
+  },
+  {
+    "id": "it",
+    "name": "Italy",
+    "max": 20,
+    "visited": ["veneto", "trentino-alto_adige"]
+  },
+  {
+    "id": "uz",
+    "name": "Uzbekistan",
+    "max": 14,
+    "visited": ["tashkent", "samarqand_region", "xorazm_region", "bukhara_region"],
+    "useCountryFlag": true
+  },
+  {
+    "id": "kz",
+    "name": "Kazakhstan",
+    "max": 20,
+    "visited": ["shymkent", "turkistan_region.png", "almaty", "almaty_region.png"]
+  },
+  {
+    "id": "kg",
+    "name": "Kyrgyzstan",
+    "max": 9,
+    "visited": ["bishkek_city"]
   }
 ]
