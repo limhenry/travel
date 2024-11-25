@@ -12,8 +12,7 @@
           list of administrative divisions by country</a>.
       </li>
       <li>2. Country data are sorted by first visited date.</li>
-      <li>3. Hong Kong, Macau, and Taiwan are not considered as provinces in China.</li>
-      <li>4. Hong Kong and Taiwan are considered as country.</li>
+      <li>3. Hong Kong and Taiwan are considered as country, not regions/provinces in China.</li>
     </ol>
     <div class="grid gap-2 border-t border-gray-400 dark:border-gray-500 py-4">
       <div>&copy; 2024 Henry Lim. All rights reserved.</div>
@@ -29,11 +28,11 @@
         </span>
         <a
           class="text-gray-800 dark:text-gray-300 hover:underline"
-          href="https://twitter.com/henrylim96"
+          href="https://bsky.app/profile/limhenry.xyz"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Twitter
+          Bluesky
         </a>
         <span>
           &middot;
@@ -46,6 +45,18 @@
         >
           Mastodon
         </a>
+        <span>
+          &middot;
+        </span>
+        <a
+          class="text-gray-800 dark:text-gray-300 hover:underline"
+          href="https://twitter.com/henrylim96"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Twitter
+        </a>
+        
       </div>
     </div>
   </footer>

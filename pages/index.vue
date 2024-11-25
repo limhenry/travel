@@ -33,7 +33,7 @@
 <script setup>
 import data from '~/data/data.json'
 
-const transit = ref(true)
+const transit = ref(false)
 const countries = computed(() => [...data.filter(e => e.transit !== !transit.value).filter(e => e.visited && e.visited.length > 0), {}])
 </script>
 
