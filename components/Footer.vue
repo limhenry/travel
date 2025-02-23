@@ -39,24 +39,12 @@
         </span>
         <a
           class="text-gray-800 dark:text-gray-300 hover:underline"
-          href="https://mastodon.social/@henrylim96"
+          href="https://www.linkedin.com/in/henrylim96/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Mastodon
+          LinkedIn
         </a>
-        <span>
-          &middot;
-        </span>
-        <a
-          class="text-gray-800 dark:text-gray-300 hover:underline"
-          href="https://twitter.com/henrylim96"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
-        
       </div>
     </div>
   </footer>
