@@ -20,9 +20,7 @@
       "kuala_lumpur",
       "putrajaya"
     ],
-    "unvisited": [
-      "labuan"
-    ]
+    "unvisited": ["labuan"]
   },
   {
     "id": "sg",
@@ -210,12 +208,7 @@
       "baden_württemberg",
       "lower_saxony"
     ],
-    "unvisited": [
-      "hesse",
-      "rhineland_palatinate",
-      "saarland",
-      "thuringia"
-    ]
+    "unvisited": ["hesse", "rhineland_palatinate", "saarland", "thuringia"]
   },
   {
     "id": "pl",
@@ -296,7 +289,12 @@
     "name": "Denmark",
     "max": 5,
     "visited": ["region_syddanmark"],
-    "unvisited": ["region_hovedstaden", "region_midtjylland", "region_nordjylland", "region_sjælland"]
+    "unvisited": [
+      "region_hovedstaden",
+      "region_midtjylland",
+      "region_nordjylland",
+      "region_sjælland"
+    ]
   },
   {
     "id": "it",
@@ -308,19 +306,49 @@
     "id": "uz",
     "name": "Uzbekistan",
     "max": 14,
-    "visited": ["tashkent", "samarqand_region", "xorazm_region", "bukhara_region"],
+    "visited": [
+      "tashkent",
+      "samarqand_region",
+      "xorazm_region",
+      "bukhara_region"
+    ],
     "useCountryFlag": true
   },
   {
     "id": "kz",
     "name": "Kazakhstan",
     "max": 20,
-    "visited": ["shymkent", "turkistan_region.png", "almaty", "almaty_region.png"]
+    "visited": [
+      "shymkent",
+      "turkistan_region.png",
+      "almaty",
+      "almaty_region.png"
+    ]
   },
   {
     "id": "kg",
     "name": "Kyrgyzstan",
     "max": 9,
     "visited": ["bishkek_city"]
+  },
+  {
+    "id": "al",
+    "name": "Albania",
+    "max": 12,
+    "visited": ["tirana"]
+  },
+  {
+    "id": "me",
+    "name": "Montenegro",
+    "max": 25,
+    "visited": ["podgorica", "kotor"],
+    "useCountryFlag": true
+  },
+  {
+    "id": "ba",
+    "name": "Bosnia and Herzegovina",
+    "max": 3,
+    "visited": ["federation_of_bosnia_and_herzegovina"],
+    "useCountryFlag": true
   }
 ]
