@@ -15,7 +15,7 @@
       <li>3. Hong Kong and Taiwan are considered as country, not regions/provinces in China.</li>
     </ol>
     <div class="grid gap-2 border-t border-gray-400 dark:border-gray-500 py-4">
-      <div>&copy; 2024 Henry Lim. All rights reserved.</div>
+      <div>&copy; 2025 Henry Lim. All rights reserved.</div>
       <div class="grid grid-flow-col justify-start gap-2">
         <a
           class="text-gray-800 dark:text-gray-300 hover:underline"
