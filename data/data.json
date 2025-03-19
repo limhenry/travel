@@ -253,7 +253,7 @@
     "id": "fr",
     "name": "France",
     "max": 18,
-    "visited": ["grand_est"],
+    "visited": ["grand_est", "Île-de-France"],
     "useCountryFlag": true
   },
   {
