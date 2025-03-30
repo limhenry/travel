@@ -20,9 +20,7 @@
       "kuala_lumpur",
       "putrajaya"
     ],
-    "unvisited": [
-      "labuan"
-    ]
+    "unvisited": ["labuan"]
   },
   {
     "id": "sg",
@@ -142,13 +140,6 @@
     "visited": ["bali", "special_region_of_yogyakarta"]
   },
   {
-    "id": "jp",
-    "name": "Japan",
-    "max": 47,
-    "visited": ["chiba"],
-    "transit": true
-  },
-  {
     "id": "us",
     "name": "United States",
     "max": 51,
@@ -179,14 +170,6 @@
     "useCountryFlag": true
   },
   {
-    "id": "hk",
-    "name": "Hong Kong",
-    "max": 18,
-    "visited": ["islands"],
-    "transit": true,
-    "useCountryFlag": true
-  },
-  {
     "id": "tw",
     "name": "Taiwan",
     "max": 20,
@@ -210,12 +193,7 @@
       "baden_württemberg",
       "lower_saxony"
     ],
-    "unvisited": [
-      "hesse",
-      "rhineland_palatinate",
-      "saarland",
-      "thuringia"
-    ]
+    "unvisited": ["hesse", "rhineland_palatinate", "saarland", "thuringia"]
   },
   {
     "id": "pl",
@@ -257,14 +235,6 @@
     "useCountryFlag": true
   },
   {
-    "id": "gb-eng",
-    "name": "England",
-    "max": 9,
-    "visited": ["london"],
-    "useCountryFlag": true,
-    "transit": true
-  },
-  {
     "id": "hr",
     "name": "Croatia",
     "max": 21,
@@ -284,19 +254,16 @@
     "visited": ["dublin"]
   },
   {
-    "id": "tr",
-    "name": "Turkey",
-    "max": 81,
-    "visited": ["istanbul"],
-    "useCountryFlag": true,
-    "transit": true
-  },
-  {
     "id": "dk",
     "name": "Denmark",
     "max": 5,
     "visited": ["region_syddanmark"],
-    "unvisited": ["region_hovedstaden", "region_midtjylland", "region_nordjylland", "region_sjælland"]
+    "unvisited": [
+      "region_hovedstaden",
+      "region_midtjylland",
+      "region_nordjylland",
+      "region_sjælland"
+    ]
   },
   {
     "id": "it",
@@ -308,19 +275,36 @@
     "id": "uz",
     "name": "Uzbekistan",
     "max": 14,
-    "visited": ["tashkent", "samarqand_region", "xorazm_region", "bukhara_region"],
+    "visited": [
+      "tashkent",
+      "samarqand_region",
+      "xorazm_region",
+      "bukhara_region"
+    ],
     "useCountryFlag": true
   },
   {
     "id": "kz",
     "name": "Kazakhstan",
     "max": 20,
-    "visited": ["shymkent", "turkistan_region.png", "almaty", "almaty_region.png"]
+    "visited": [
+      "shymkent",
+      "turkistan_region.png",
+      "almaty",
+      "almaty_region.png"
+    ]
   },
   {
     "id": "kg",
     "name": "Kyrgyzstan",
     "max": 9,
     "visited": ["bishkek_city"]
+  },
+  {
+    "id": "uk",
+    "name": "United Kingdom",
+    "max": 4,
+    "visited": ["scotland"],
+    "unvisited": ["northern_ireland", "england", "wales"]
   }
 ]
