@@ -9,10 +9,6 @@
             <span>({{ countries.length - 1 }})</span>
           </div>
         </div>
-        <div class="grid gap-2 grid-flow-col justify-end items-center">
-          <input id="transit" v-model="transit" class="cursor-pointer" type="checkbox">
-          <label class="cursor-pointer" for="transit">Show transit/layover countries</label>
-        </div>
       </div>
       <div class="lists grid gap-6">
         <CountryCard
@@ -22,7 +18,6 @@
           :name="country.name"
           :value="country.visited ? country.visited.length : -1"
           :max="country.max"
-          :transit="country.transit"
         />
       </div>
     </div>
@@ -33,8 +28,7 @@
 <script setup>
 import data from '~/data/data.json'
 
-const transit = ref(false)
-const countries = computed(() => [...data.filter(e => e.transit !== !transit.value).filter(e => e.visited && e.visited.length > 0), {}])
+const countries = computed(() => [...data.filter(e => e.visited && e.visited.length > 0), {}])
 </script>
 
 <style scoped>
