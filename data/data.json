@@ -140,13 +140,6 @@
     "visited": ["bali", "special_region_of_yogyakarta"]
   },
   {
-    "id": "jp",
-    "name": "Japan",
-    "max": 47,
-    "visited": ["chiba"],
-    "transit": true
-  },
-  {
     "id": "us",
     "name": "United States",
     "max": 51,
@@ -174,14 +167,6 @@
       "caraga",
       "bangsamoro"
     ],
-    "useCountryFlag": true
-  },
-  {
-    "id": "hk",
-    "name": "Hong Kong",
-    "max": 18,
-    "visited": ["islands"],
-    "transit": true,
     "useCountryFlag": true
   },
   {
@@ -246,16 +231,8 @@
     "id": "fr",
     "name": "France",
     "max": 18,
-    "visited": ["grand_est"],
+    "visited": ["grand_est", "Île-de-France"],
     "useCountryFlag": true
-  },
-  {
-    "id": "gb-eng",
-    "name": "England",
-    "max": 9,
-    "visited": ["london"],
-    "useCountryFlag": true,
-    "transit": true
   },
   {
     "id": "hr",
@@ -275,14 +252,6 @@
     "name": "Ireland",
     "max": 26,
     "visited": ["dublin"]
-  },
-  {
-    "id": "tr",
-    "name": "Turkey",
-    "max": 81,
-    "visited": ["istanbul"],
-    "useCountryFlag": true,
-    "transit": true
   },
   {
     "id": "dk",
@@ -330,6 +299,13 @@
     "name": "Kyrgyzstan",
     "max": 9,
     "visited": ["bishkek_city"]
+  },
+  {
+    "id": "uk",
+    "name": "United Kingdom",
+    "max": 4,
+    "visited": ["scotland"],
+    "unvisited": ["northern_ireland", "england", "wales"]
   },
   {
     "id": "al",
