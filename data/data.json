@@ -306,5 +306,25 @@
     "max": 4,
     "visited": ["scotland"],
     "unvisited": ["northern_ireland", "england", "wales"]
+  },
+  {
+    "id": "al",
+    "name": "Albania",
+    "max": 12,
+    "visited": ["tirana"]
+  },
+  {
+    "id": "me",
+    "name": "Montenegro",
+    "max": 25,
+    "visited": ["podgorica", "kotor"],
+    "useCountryFlag": true
+  },
+  {
+    "id": "ba",
+    "name": "Bosnia and Herzegovina",
+    "max": 3,
+    "visited": ["federation_of_bosnia_and_herzegovina"],
+    "useCountryFlag": true
   }
 ]
