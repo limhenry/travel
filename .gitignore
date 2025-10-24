@@ -89,3 +89,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+app/assets/data/countries.json
+app/assets/data/flights.json
+app/assets/data/heatmap.json
