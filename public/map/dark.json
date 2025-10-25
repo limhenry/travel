@@ -1,0 +1,171 @@
+{
+  "version": 8,
+  "metadata": {},
+  "sources": {
+    "ne2_shaded": {
+      "maxzoom": 6,
+      "tileSize": 256,
+      "tiles": [
+        "https://tiles.openfreemap.org/natural_earth/ne2sr/{z}/{x}/{y}.png"
+      ],
+      "type": "raster"
+    },
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://tiles.openfreemap.org/planet"
+    }
+  },
+  "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
+  "glyphs": "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "hsl(0,0%,16%)"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": [
+        "all",
+        ["match", ["geometry-type"], ["MultiPolygon", "Polygon"], true, false],
+        ["!=", ["get", "brunnel"], "tunnel"]
+      ],
+      "paint": {"fill-antialias": true, "fill-color": "hsl(0,0%,12%)"}
+    },
+    {
+      "id": "boundary_3",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        [">=", ["get", "admin_level"], 3],
+        ["<=", ["get", "admin_level"], 6],
+        ["!=", ["get", "maritime"], 1],
+        ["!=", ["get", "disputed"], 1],
+        ["!", ["has", "claimed_by"]]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "hsl(0,0%,41%)",
+        "line-dasharray": [1, 1],
+        "line-width": ["interpolate", ["linear", 1], ["zoom"], 7, 1, 11, 2]
+      }
+    },
+    {
+      "id": "boundary_2",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "filter": [
+        "all",
+        ["==", ["get", "admin_level"], 2],
+        ["!=", ["get", "maritime"], 1],
+        ["!=", ["get", "disputed"], 1],
+        ["!", ["has", "claimed_by"]]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "hsl(0,0%,41%)",
+        "line-opacity": ["interpolate", ["linear"], ["zoom"], 0, 0.4, 4, 1],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1, 5, 1.2, 12, 3]
+      }
+    },
+    {
+      "id": "boundary_disputed",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "filter": [
+        "all",
+        ["!=", ["get", "maritime"], 1],
+        ["==", ["get", "disputed"], 1]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "hsl(0,0%,41%)",
+        "line-dasharray": [1, 2],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1, 5, 1.2, 12, 3]
+      }
+    },
+    {
+      "id": "label_country_3",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 2,
+      "maxzoom": 9,
+      "filter": [
+        "all",
+        ["==", ["get", "class"], "country"],
+        [">=", ["get", "rank"], 3]
+      ],
+      "layout": {
+        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+        "text-font": ["Noto Sans Bold"],
+        "text-max-width": 6.25,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 3, 9, 7, 17]
+      },
+      "paint": {
+        "text-color": "hsl(0,0%,40%)",
+        "text-halo-color": "hsl(0,0%,3%)",
+        "text-halo-width": 1.25
+      }
+    },
+    {
+      "id": "label_country_2",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "maxzoom": 9,
+      "filter": [
+        "all",
+        ["==", ["get", "class"], "country"],
+        ["==", ["get", "rank"], 2]
+      ],
+      "layout": {
+        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+        "text-font": ["Noto Sans Bold"],
+        "text-max-width": 6.25,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 2, 9, 5, 17]
+      },
+      "paint": {
+        "text-color": "hsl(0,0%,40%)",
+        "text-halo-color": "hsl(0,0%,3%)",
+        "text-halo-width": 1.25
+      }
+    },
+    {
+      "id": "label_country_1",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "maxzoom": 9,
+      "filter": [
+        "all",
+        ["==", ["get", "class"], "country"],
+        ["==", ["get", "rank"], 1]
+      ],
+      "layout": {
+        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+        "text-font": ["Noto Sans Bold"],
+        "text-max-width": 6.25,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 1, 9, 4, 17]
+      },
+      "paint": {
+        "text-color": "hsl(0,0%,40%)",
+        "text-halo-color": "hsl(0,0%,3%)",
+        "text-halo-width": 1.25
+      }
+    }
+  ],
+  "id": "npm09gtwz"
+}

@@ -22,14 +22,20 @@ export type Flight = {
   date: string;
   tail: string;
   airline_code: string;
-  flight_number: number;
-  origin: string;
-  destination: string;
+  flight_number: string | number;
+  origin?: Airport;
+  destination?: Airport;
   aircraft_type: string;
 }
 
 export type Heatmap = {
   lat: number;
   lon: number;
+  count: number;
+}
+
+export type YearItem = {
+  label: string;
+  value: string;
   count: number;
 }

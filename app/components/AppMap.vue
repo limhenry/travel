@@ -11,7 +11,7 @@ const props = defineProps<{
   maxZoom?: number,
 }>()
 
-const mapRef = useTemplateRef('map')
+const mapRef = useTemplateRef('mapRef')
 const colorMode = useColorMode()
 
 let map: Map | null = null
@@ -43,9 +43,7 @@ onBeforeUnmount(() => {
 })
 
 const mapStyleUrl = computed(() => {
-  return colorMode.value === 'dark'
-    ? 'https://tiles.openfreemap.org/styles/fiord'
-    : 'https://tiles.openfreemap.org/styles/positron'
+  return colorMode.value === 'dark' ? '/map/dark.json' : '/map/light.json'
 })
 
 watch(colorMode, () => {
@@ -54,5 +52,5 @@ watch(colorMode, () => {
 </script>
 
 <template>
-  <div ref="map" />
+  <div ref="mapRef" />
 </template>

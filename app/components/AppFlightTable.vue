@@ -14,7 +14,6 @@ const pagination = ref({
 const columns: TableColumn<any>[] = [{
   accessorKey: 'id',
   header: '#',
-  cell: ({ row }: { row: any }) => row.index + 1
 }, {
   accessorKey: 'date',
   header: 'Date'
