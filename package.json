@@ -9,7 +9,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "heatmap": "node ./scripts/fetchHeatmap.js"
+    "fetch-heatmap": "node ./scripts/fetchHeatmap.js",
+    "fetch-airline-logos": "node ./scripts/fetchAirlineLogos.js"
   },
   "dependencies": {
     "@deck.gl/aggregation-layers": "^9.2.2",

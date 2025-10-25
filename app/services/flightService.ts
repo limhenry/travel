@@ -23,3 +23,27 @@ export const getAirport = () => {
 
   return [...codes].map(code => airports.find(airport => airport.iata === code))
 }
+
+export const removeReciprocalDuplicates = (routeArray) => {
+  // Use reduce to iterate and build a temporary Map of unique routes
+  const uniqueRoutesMap = routeArray.reduce((acc, route) => {
+    const { origin, destination } = route;
+
+    // 1. Normalize the route key by sorting the codes alphabetically.
+    // This key is used *only* for checking uniqueness.
+    const sortedCodes = [origin.iata, destination.iata].sort();
+    const normalizedKey = sortedCodes.join('-'); // e.g., "KUL-SIN" or "BER-PEN"
+
+    // 2. If the normalized key isn't already in the Map, store the ENTIRE current object.
+    // This ensures that the data from the first encountered version (e.g., KUL-SIN) is kept.
+    if (!acc.has(normalizedKey)) {
+      acc.set(normalizedKey, route);
+    }
+
+    // 3. Return the accumulator (the Map).
+    return acc;
+  }, new Map()); // Start with an empty Map
+
+  // Convert the values (the original full objects) of the final Map back into an array.
+  return Array.from(uniqueRoutesMap.values());
+}

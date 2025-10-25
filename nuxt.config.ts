@@ -24,5 +24,9 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  }
+  },
+
+  experimental: {
+    viewTransition: true,
+  },
 })

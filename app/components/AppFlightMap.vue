@@ -1,82 +1,56 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-import { Map } from 'maplibre-gl'
-import 'maplibre-gl/dist/maplibre-gl.css'
-import { ArcLayer, ScatterplotLayer } from '@deck.gl/layers'
+import { ArcLayer } from '@deck.gl/layers'
 import { MapboxOverlay } from '@deck.gl/mapbox'
+import type { Map } from 'maplibre-gl';
+
+import { removeReciprocalDuplicates } from '~/services/flightService'
 
 const props = defineProps<{
   flights: any[]
-  airports: any[]
+  airports: any[],
 }>()
 
-const map = ref(null)
-let mapInstance: Map | null = null
+const selectedRoute = defineModel<string[]>()
 
-onMounted(() => {
-  if (!map.value) return
+const arcLayer = computed(() => (new ArcLayer({
+  id: 'ArcLayer',
+  data: removeReciprocalDuplicates(props.flights),
+  getSourcePosition: d => [d.origin.lon, d.origin.lat],
+  getTargetPosition: d => [d.destination.lon, d.destination.lat],
+  getHeight: 0.2,
+  getWidth: 2.5,
+  parameters: { cullMode: 'none', depthTest: false },
+  greatCircle: true,
+  pickable: true,
+  autoHighlight: true,
+  getSourceColor: () => [113, 208, 215, 200],
+  getTargetColor: () => [79, 62, 193, 200],
+  highlightColor: [229, 192, 32, 255],
+  onHover: (e) => {
+    const val = [e.object?.origin.iata, e.object?.destination.iata];
+    if (selectedRoute.value?.[0] === val[0] && selectedRoute.value?.[1] === val[1]) return;
+    selectedRoute.value = e.object && val;
+  }
+})))
 
-  mapInstance = new Map({
-    container: map.value,
-    style: 'https://tiles.openfreemap.org/styles/fiord',
-    center: [70, 40],
-    zoom: 2,
-    minZoom: 0,
-    maxZoom: 10,
-    canvasContextAttributes: { antialias: true }
+const onMapLoad = (map: Map) => {
+  const deck = new MapboxOverlay({
+    layers: [arcLayer.value],
+    interleaved: true,
+    pickingRadius: 4,
   })
 
-  mapInstance.on('style.load', () => {
-    mapInstance?.setProjection({
-      type: 'globe'
-    })
-  })
-
-  const arcLayer = new ArcLayer({
-    id: 'ArcLayer',
-    data: props.flights,
-    getSourcePosition: d => [d.origin.lon, d.origin.lat],
-    getTargetPosition: d => [d.destination.lon, d.destination.lat],
-    getSourceColor: _ => [113, 208, 215, 200],
-    getTargetColor: _ => [113, 180, 150, 200],
-    getHeight: 0.3,
-    getWidth: 2,
-    parameters: { cullMode: 'none', depthTest: false },
-    greatCircle: true,
-    pickable: true
-  })
-
-  const scatterplotLayer = new ScatterplotLayer({
-    id: 'ScatterplotLayer',
-    data: props.airports,
-    getPosition: d => [d.lon, d.lat],
-    getFillColor: [191, 239, 243, 180],
-    getRadius: 100,
-    radiusMinPixels: 5,
-    radiusMaxPixels: 20,
-    pickable: true,
-    parameters: { depthTest: false }
-  })
-
-  mapInstance.on('load', () => {
-    const deckOverlay = new MapboxOverlay({
-      layers: [arcLayer, scatterplotLayer],
-      interleaved: true
-    })
-
-    mapInstance?.addControl(deckOverlay)
-  })
-})
-
-onBeforeUnmount(() => {
-  if (mapInstance) mapInstance.remove()
-})
+  map.addControl(deck)
+}
 </script>
 
 <template>
-  <div
-    ref="map"
-    style="width: 100%; height: 100%"
+  <AppMap
+    projection="globe"
+    :center="[70, 40]"
+    :zoom="2"
+    :min-zoom="2"
+    :max-zoom="10"
+    @load="onMapLoad"
   />
 </template>
