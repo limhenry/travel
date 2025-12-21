@@ -304,8 +304,8 @@
     "id": "uk",
     "name": "United Kingdom",
     "max": 4,
-    "visited": ["scotland"],
-    "unvisited": ["northern_ireland", "england", "wales"]
+    "visited": ["scotland", "england"],
+    "unvisited": ["northern_ireland", "wales"]
   },
   {
     "id": "al",
@@ -325,6 +325,78 @@
     "name": "Bosnia and Herzegovina",
     "max": 3,
     "visited": ["federation_of_bosnia_and_herzegovina"],
+    "useCountryFlag": true
+  },
+  {
+    "id": "ma",
+    "name": "Morocco",
+    "max": 12,
+    "visited": [
+      "marrakech_safi",
+      "draa_tafilalet",
+      "fes_meknes",
+      "tanger_tetouan_al_hoceima",
+      "casablanca_settat"
+    ],
+    "unvisited": [
+      "oriental",
+      "rabat_sale_kenitra",
+      "beni_mellal_khenifra",
+      "souss_massa",
+      "guelmim_oued_noun",
+      "laayoune_sakia_el_hamra",
+      "dakhla_oued_ed_dahab"
+    ],
+    "useCountryFlag": true
+  },
+  {
+    "id": "tn",
+    "name": "Tunisia",
+    "max": 24,
+    "visited": [
+      "tunis",
+      "sousse",
+      "mahdia",
+      "kairouan"
+    ],
+    "unvisited": [
+      "ariana",
+      "beja",
+      "ben_arous",
+      "bizerte",
+      "gabes",
+      "gafsa",
+      "jendouba",
+      "kasserine",
+      "kebili",
+      "kef",
+      "manouba",
+      "medenine",
+      "monastir",
+      "nabeul",
+      "sfax",
+      "sidi_bouzid",
+      "siliana",
+      "tataouine",
+      "tozeur",
+      "zaghouan"
+    ],
+    "useCountryFlag": true
+  },
+  {
+    "id": "mt",
+    "name": "Malta",
+    "max": 6,
+    "visited": [
+      "northern_region",
+      "eastern_region",
+      "western_region"
+    ],
+    "unvisited": [
+      "gozo_region",
+      "port_region",
+      "southern_region"
+    ],
     "useCountryFlag": true
   }
 ]
