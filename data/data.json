@@ -199,7 +199,7 @@
     "id": "pl",
     "name": "Poland",
     "max": 16,
-    "visited": ["lubusz", "masovian", "pomerania"]
+    "visited": ["lubusz", "masovian", "pomerania", "lesser_poland"]
   },
   {
     "id": "at",
