@@ -257,9 +257,8 @@
     "id": "dk",
     "name": "Denmark",
     "max": 5,
-    "visited": ["region_syddanmark"],
+    "visited": ["region_syddanmark", "region_hovedstaden"],
     "unvisited": [
-      "region_hovedstaden",
       "region_midtjylland",
       "region_nordjylland",
       "region_sjælland"
@@ -398,5 +397,11 @@
       "southern_region"
     ],
     "useCountryFlag": true
+  },
+  {
+    "id": "se",
+    "name": "Sweden",
+    "max": 21,
+    "visited": ["skane_county"]
   }
 ]
